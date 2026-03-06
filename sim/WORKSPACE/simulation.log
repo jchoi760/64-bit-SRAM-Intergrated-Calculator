@@ -1,0 +1,64 @@
+xrun(64): 25.03-s003: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s003: Started on Feb 18, 2026 at 11:08:31 EST
+xrun
+	-64bit
+	-sv
+	-linedebug
+	-access +rwc
+	-timescale 1ns/10ps
+	+define+SIM=1
+	+define+INST_FILE=""
+	+testname=
+	+incdir+sym_links
+	-coverage all
+	-licqueue
+	-covoverwrite
+	-f sym_links/sim_no_path.include
+		sym_links/calculator_pkg.sv
+		sym_links/adder32.sv
+		sym_links/controller.sv
+		sym_links/full_adder.sv
+		sym_links/result_buffer.sv
+		sym_links/CF_SRAM_1024x32.tt_180V_25C.v
+		sym_links/top_lvl.sv
+		sym_links/tb_calculator.sv
+	-logfile simulation.log
+
+   User defined plus("+") options:
+	+testname=
+
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+Loading snapshot worklib.tb_calculator:sv .................... Done
+xcelium> source /tools/software/cadence/xcelium/latest/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,SHMPOPT: Some objects excluded from $shm_probe due to optimizations.
+            File: ./sym_links/tb_calculator.sv, line = 47, pos = 17
+           Scope: tb_calculator
+            Time: 0 FS + 0
+
+
+--------------Beginning Simulation!--------------
+
+Time:                    0
+--------------Initializing Signals---------------
+
+Time:                10000
+
+-------------Finished Simulation!----------------
+
+Time:             12930000
+Cycle Count: 645 cycles (from S_IDLE to S_END)
+Simulation complete via $finish(1) at time 12930 NS + 0
+./sym_links/tb_calculator.sv:65         $finish;
+xcelium> exit
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  tb_calculator(tb_calculator)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_79ea9fa3_00000000.ucm (reused)
+  data               :  ./cov_work/scope/test/icc_79ea9fa3_00000000.ucd
+TOOL:	xrun(64)	25.03-s003: Exiting on Feb 18, 2026 at 11:08:31 EST  (total: 00:00:00)
